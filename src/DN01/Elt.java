@@ -25,9 +25,14 @@ public class Elt implements Comparator<Elt> {
 
 //data structure - list
 class Seznam {
-    public Seznam(Elt elt, Seznam rep) {
+    Elt head;
+    Seznam rep;
 
+    public Seznam(Elt elt, Seznam rep) {
+        this.head = elt;
+        this.rep = rep;
     }
+
     static Seznam insert(Seznam s, Elt e){}
     static Elt find(Seznam s, int key){}
     static Seznam delete(Seznam s, int key){}
