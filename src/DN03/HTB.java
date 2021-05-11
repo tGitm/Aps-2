@@ -11,23 +11,22 @@ public class HTB {
         this.m = m;
         this.c1 = c1;
         this.c2 = c2;
-        tab = new int[m];
+        tab = new int[m];   //tab določim velikost m
     }
 
     void insert(int key) {
-
         //int ind2 = ind + (c1 * i) + (c2 * i) * mod m;
-
         if (!find(key)) {
             int ind = (key * p) % m;
             if (tab[ind] != 0) {
                 for (int i = 0; i < tab.length; i++) {
-                    ind = (ind + c1 * i + c2 * i*i) % m;
+                    ind = (((key * p) % m) + c1 * i + c2 * i*i) % m;
                     if (tab[ind] != 0) {
                         collisions++;
                     }
                     else {
                         tab[ind] = key;
+                        break;
                     }
                 }
 
@@ -48,18 +47,15 @@ public class HTB {
                             insert(tab2[i]);
                         }
                     }
-
                     //insert-am key
                     insert(key);
                 }
+
             }
             else {
                 tab[ind] = key;
-                //key += 1;
             }
         }
-
-        //loop -> gledam index
     }
 
     boolean find(int key) {
