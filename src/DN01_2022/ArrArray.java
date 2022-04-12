@@ -105,7 +105,7 @@ class TestClass {
 
         ar.elements.add(1);
         ar.elements.add(11);
-        ar.elements.add(54);
+        ar.elements.add(5);
         ar.elements.add(3);
         ar.elements.add(29);
 
