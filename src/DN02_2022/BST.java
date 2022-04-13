@@ -156,12 +156,11 @@ public class BST {
 
     //sprehodi po grafu
     void inorder(Node root) {
-        if (root == null) {
-            return;
+        if (root != null) {
+            inorder(root.left);
+            System.out.println(root.data);
+            inorder(root.right);
         }
-        inorder(root.left);
-        System.out.println(root.data);
-        inorder(root.right);
     }
 
     void preorder(Node root) {
@@ -205,8 +204,8 @@ class Run {
         System.out.println("--");
 
         b.insert(11); b.insert(23); b.insert(31); b.insert(42); b.insert(29);
-        System.out.println( b.find(29) );
-        System.out.println("--");
+        //System.out.println( b.find(29) );
+        //System.out.println("--");
 
         b.insert(23); b.insert(29); b.delete(31);
         System.out.println( b.find(31) );
