@@ -1,0 +1,9 @@
+public int remove() {
+
+int popped = heap[FRONT];
+heap[FRONT] = heap[size];
+heap[size]=0;
+minHeapify(FRONT);
+size--;
+return popped;
+}
